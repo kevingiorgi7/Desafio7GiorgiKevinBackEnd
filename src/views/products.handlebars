@@ -1,0 +1,42 @@
+<div>
+    <h2>¡Hola {{user.name}}!</h2>
+    <h3>Catágolo:</h3>
+    <div>
+    {{#each payload}}
+        <div>
+            <li>
+            <strong>Nombre del producto: </strong>{{title}}<br>
+            <strong>Categoria: </strong>{{category}}<br>
+            <strong>Precio: </strong>$ {{price}}<br>
+            <button> <a href="http://localhost:8080/api/views/products/{{id}}">Ver detalle</a></button>
+            <form 
+                action="http://localhost:8080/api/carts/64fa99dae1819e773f991620/products/{{id}}" 
+                method="post">
+                <a href="http://localhost:8080/api/views/carts/64fa99dae1819e773f991620"></a>
+                <input type="submit" value="Agregrar al carrito">
+            </form>
+            <br>
+            <br>
+            </li>
+        </div>
+    {{/each}}
+    
+    {{#if info.totalPages}}
+    <p>Página {{info.page}} de {{info.totalPages}}</p>
+
+    {{#if info.prevLink}}
+        <a href={{info.prevLink}}>Página anterior</a>
+    {{/if}}
+
+    {{#if info.nextLink}}
+        <a href={{info.nextLink}}>Página siguiente</a>
+    {{/if}}
+    
+    {{/if}}
+
+    </div>  
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

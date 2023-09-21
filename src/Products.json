@@ -1,0 +1,152 @@
+[
+  {
+    "title": "Sensor",
+    "description": "Sensor de estacionamiento trasero marca toyota",
+    "price": 50000,
+    "thumbnail": [
+      "./media/sensor/foto1.jpg",
+      "./media/sensor/foto2.jpg",
+      "./media/sensor/foto3.jpg"
+    ],
+    "code": "113355",
+    "stock": 20,
+    "status": true,
+    "category": "yaris",
+    "id": 1
+  },
+  {
+    "title": "Barra",
+    "description": "Barra anti vuelco marca toyota",
+    "price": 90000,
+    "thumbnail": [
+      "./media/barra/foto1.jpg",
+      "./media/barra/foto2.jpg",
+      "./media/barra/foto3.jpg"
+    ],
+    "code": "779911",
+    "stock": 17,
+    "status": true,
+    "category": "hilux",
+    "id": 2
+  },
+  {
+    "title": "Cobertor",
+    "description": "Cobertor caja marca toyota",
+    "price": 30000,
+    "thumbnail": [
+      "./media/cobertor/foto1.jpg",
+      "./media/cobertor/foto2.jpg",
+      "./media/cobertor/foto3.jpg"
+    ],
+    "code": "335577",
+    "stock": 9,
+    "status": true,
+    "category": "hilux",
+    "id": 3
+  },
+  {
+    "title": "Gancho De Arrastre",
+    "description": "Enganche para arrastre de cargas",
+    "price": 130000,
+    "thumbnail": [
+      "./media/gancho/foto1.jpg",
+      "./media/gancho/foto2.jpg",
+      "./media/gancho/foto3.jpg"
+    ],
+    "code": "557799",
+    "stock": 15,
+    "status": true,
+    "category": "hilux",
+    "id": 4
+  },
+  {
+    "title": "Embellecedor cromado de manija",
+    "description": "Embellecedor de manijas de apertura de puertas",
+    "price": 40000,
+    "thumbnail": [
+      "./media/embellecedor/foto1.jpg",
+      "./media/embellecedor/foto2.jpg",
+      "./media/embellecedor/foto3.jpg"
+    ],
+    "code": "224466",
+    "stock": 25,
+    "status": true,
+    "category": "corolla",
+    "id": 5
+  },
+  {
+    "title": "Tuercas De Seguridad",
+    "description": "Tuercas De Seguridad",
+    "price": 20000,
+    "thumbnail": [
+      "./media/tuercas/foto1.jpg",
+      "./media/tuercas/foto2.jpg",
+      "./media/tuercas/foto3.jpg"
+    ],
+    "code": "880022",
+    "stock": 50,
+    "status": true,
+    "category": "yaris",
+    "id": 6
+  },
+  {
+    "title": "Cargador inalámbrico",
+    "description": "Cargador inalámbrico marca toyota",
+    "price": 100000,
+    "thumbnail": [
+      "./media/cargador/foto1.jpg",
+      "./media/cargador/foto2.jpg",
+      "./media/cargador/foto3.jpg"
+    ],
+    "code": "446688",
+    "stock": 2,
+    "status": true,
+    "category": "corolla",
+    "id": 7
+  },
+  {
+    "title": "Llanta",
+    "description": "Llanta de aleación 18¨",
+    "price": 80000,
+    "thumbnail": [
+      "./media/llanta/foto1.jpg",
+      "./media/llanta/foto2.jpg",
+      "./media/llanta/foto3.jpg"
+    ],
+    "code": "668822",
+    "stock": 16,
+    "status": true,
+    "category": "yaris",
+    "id": 8
+  },
+  {
+    "title": "Zócalo de aluminio",
+    "description": "Embellecedor y protector de zócalos del vehículo",
+    "price": 30000,
+    "thumbnail": [
+      "./media/zocalo/foto1.jpg",
+      "./media/zocalo/foto2.jpg",
+      "./media/zocalo/foto3.jpg"
+    ],
+    "code": "135246",
+    "stock": 5,
+    "status": true,
+    "category": "corolla",
+    "id": 9
+  },
+  {
+    "title": "Porta Bicicleta",
+    "description": "Accesorio para el transporte simple y seguro de bicicletas",
+    "price": 50000,
+    "thumbnail": [
+      "./media/portabici/foto1.jpg",
+      "./media/portabici/foto2.jpg",
+      "./media/portabici/foto3.jpg"
+    ],
+    "code": "798017",
+    "stock": 1,
+    "status": true,
+    "category": "hilux",
+    "id": 10
+  }
+]

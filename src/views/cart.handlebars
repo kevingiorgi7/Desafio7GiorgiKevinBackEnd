@@ -1,0 +1,16 @@
+<div>
+    <div>
+        <h2>Carrito ID: {{cid}}</h2>
+        {{#each products}}
+        <strong>Nombre: </strong>{{product.title}}<br>
+        <strong>Product ID: </strong>{{product._id}}<br>
+        <strong>Cantidad: </strong>{{quantity}}<br>
+        <br>
+        {{/each}}
+    </div>  
+    <button> <a href="http://localhost:8080/api/views/products">Volver</a></button>
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

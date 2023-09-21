@@ -1,0 +1,35 @@
+<div>
+
+<h1>Registrate</h1>
+
+<form id="registerForm">
+
+    <label>Nombre</label>
+    <input type="text" name="first_name" id="first_name"/>
+
+    <label>Apellido</label>
+    <input type="text" name="last_name" id="last_name"/>
+
+    <label>E-mail</label>
+    <input type="text" name="email" id="email"/>
+
+    <label>Edad</label>
+    <input type="number" name="age" id="age"/>
+
+    <label>Password</label>
+    <input type="password" name="password" id="password"/>
+
+    <input type="submit" value="REGISTER" />
+
+</form>
+
+<button onclick="location.href='/api/sessions/githubRegister'">GITHUB</button>
+
+
+<p>
+    ¿Ya estás registrado? <a href="http://localhost:8080/api/views/login">¡Logueate aquí!</a>
+</p>
+
+</div>
+
+<script src="/js/register.js"></script>
