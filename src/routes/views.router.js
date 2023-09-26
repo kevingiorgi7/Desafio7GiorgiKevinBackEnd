@@ -2,6 +2,7 @@ import { Router } from "express";
 import { productManager } from "../managers/products/ProductManagerMongo.js";
 import { cartManager }  from "../managers/carts/CartsManagerMongo.js";
 import { __dirname } from "../utils.js";
+import { userManager } from "../managers/UsersManager.js";
 
 const router = Router();
 
@@ -134,7 +135,7 @@ router.get('/login',publicAcces,(req,res)=>{
 
 router.get('/profile',privateAcces, (req,res)=>{
     try {
-        console.log(req.session.user);
+        console.log(req.session);
         res.render('profile',{user:req.session.user})
     } catch (error) {
         throw res.status(500).json({
@@ -143,5 +144,26 @@ router.get('/profile',privateAcces, (req,res)=>{
     }
 })
 
+router.get("/profilePassport", async (req, res) => {
+    const { user } = req.session.passport;
+    const userDB = await userManager.findUserById(user);
+    try {
+        req.session.passport = {
+            name: `${userDB.first_name} ${userDB.last_name}`,
+            email: userDB.email,
+            admin: userDB.isAdmin
+        }
+        console.log(req.session.passport, 'REQ.SESSION',userDB, 'userdb');
+        res.render('profilePassport',{user:req.session.passport})
+        /*     if (userDB.isAdmin) {
+        return res.render("adminHome");
+        }
+        res.render("clientHome"); */
+    } catch (error) {
+        throw res.status(500).json({
+            error,
+        });
+    }
+})
 
 export default router;

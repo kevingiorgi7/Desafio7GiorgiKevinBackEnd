@@ -1,4 +1,4 @@
-import passport, { Passport } from "passport";
+import passport from "passport";
 import { userModel } from "../db/models/users.model.js";
 import { Strategy as LocalStrategy} from "passport-local";
 import { Strategy as GitHubStrategy} from "passport-github2";
@@ -33,18 +33,20 @@ passport.use(new GitHubStrategy({
     },
     async function (accessToken, refreshToken, profile, done) {
         try {
-            const userExist = await userManager.findUser(profile.username)
-            if(!userExist){
+            const userExist = await userModel.findOne({email: profile.username})
+            if(userExist){
                 return done(null,false)
             }
+            console.log(profile, 'n1');
             const newUser = {
                 first_name: profile.displayName.split(' ') [0],
                 last_name: profile.displayName.split(' ') [1],
                 email: profile.username,
-                age: ' ',
-                password: ' '
+                age: '1',
+                password: '1',
             }
-            const result = await userManager.create(newUser)
+            console.log(newUser, 'n2');
+            const result = await userModel.create(newUser)
             return done(null,result)
         } catch (error) {
             done(error)
@@ -61,9 +63,10 @@ passport.serializeUser((usuario,done)=>{
 })
 
 // id => user
-passport.deserializeUser(async(id,done)=>{
+passport.deserializeUser(async (id,done)=>{
     try {
         const user = await userModel.findById(id)
+        console.log(id);
         done(null,user)
     } catch (error) {
         done(error)

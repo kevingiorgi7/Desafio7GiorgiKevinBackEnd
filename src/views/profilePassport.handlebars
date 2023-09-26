@@ -1,0 +1,18 @@
+<div>
+    {{#if user.admin}}
+        <h2>Perfil: Administrador</h2>
+        {{else}}
+        <h2>Perfil: Usuario</h2> 
+    {{/if}} 
+    <h1>Bienvenido/a, {{user.name}}</h1>
+    <p>Correo: {{user.email}}</p>
+    <br>
+        <form action="http://localhost:8080/api/views/products" method="GET">
+        <button>Ver catálogo de productos</button>
+    </form>
+    <br>
+    <br>
+    <form action="http://localhost:8080/api/sessions/logout" method="GET">
+        <button>Cerrar sesión</button>
+    </form>
+</div>

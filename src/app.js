@@ -33,6 +33,20 @@ app.use(express.urlencoded({ extended: true }))
 // Public
 app.use(express.static(__dirname+'/public'))
 
+// SESSION con MONGO
+app.use(session({
+    store: new MongoStore({
+        mongoUrl: 'mongodb+srv://kevingiorgi777:1641.@cluster0.ppb7tkj.mongodb.net/ecommerce?retryWrites=true&w=majority',
+        ttl:3600 //Segundos // Si no pongo nada, son 14 dias
+    }),
+    secret: 'secretSession',
+    resave: false,
+    saveUninitialized:false
+}))
+
+// Passport
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Handlebars
 app.engine('handlebars',handlebars.engine())
@@ -56,31 +70,6 @@ app.use(session({
     resave: false,
     saveUninitialized:false
 })) */
-
-
-
-// SESSION con MONGO
-app.use(session({
-    store: new MongoStore({
-        mongoUrl: 'mongodb+srv://kevingiorgi777:1641.@cluster0.ppb7tkj.mongodb.net/ecommerce?retryWrites=true&w=majority',
-        ttl:3600 //Segundos // Si no pongo nada, son 14 dias
-    }),
-    secret: 'secretSession',
-    resave: false,
-    saveUninitialized:false
-}))
-
-// Passport
-app.use(passport.initialize())
-app.use(passport.session())
-
-// Routes
-app.use('/api/products', productsRouter)
-app.use('/api/carts', cartsRouter)
-app.use('/api/views',viewsRouter)
-app.use('/api/sessions', sessionRouter) 
-
-
 
 //Cookies 
 /* 
@@ -107,6 +96,19 @@ app.get('/eliminarCookie',(req,res)=>{
     res.clearCookie('cookie1').send('eliminando coookie')
 })
  */
+
+
+
+
+// Routes
+app.use('/api/products', productsRouter)
+app.use('/api/carts', cartsRouter)
+app.use('/api/views',viewsRouter)
+app.use('/api/sessions', sessionRouter) 
+
+
+
+
 
 
 

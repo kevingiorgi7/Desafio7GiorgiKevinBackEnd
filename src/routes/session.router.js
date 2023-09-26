@@ -79,14 +79,21 @@ router.get('/logout',(req,res)=>{
 // Passport Github
 router.get(
     "/githubRegister", 
-    passport.authenticate("github",{scope: ["user:email"]}))
+    passport.authenticate("github",{scope: ["user:username"]})
+);
 
 router.get(
     "/github", 
     passport.authenticate("github",{
-        failureRedirect: "/api/views/register",successRedirect:"/api/views/profile"
-        })
-    )
+        failureRedirect: "/api/views/login",
+        successRedirect:"/api/views/profilePassport",
+    })
+    /*  ,(req,res)=>{
+        console.log(req.user, 'n3');
+        console.log(req.session);
+        res.send('123 Probando')
+    } */
+    );
 
 
 
