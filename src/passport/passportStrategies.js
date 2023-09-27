@@ -34,16 +34,23 @@ passport.use(new GitHubStrategy({
     async function (accessToken, refreshToken, profile, done) {
         try {
             const userExist = await userModel.findOne({email: profile.username})
+            // Login
             if(userExist){
-                return done(null,false)
+                if(userExist.fromGithub){
+                    return done(null,userExist)
+                }
+                return done(null,false), console.log('Error: El email/username ya existe');
             }
             console.log(profile, 'n1');
+
+            // Si no existe -> Registro
             const newUser = {
                 first_name: profile.displayName.split(' ') [0],
                 last_name: profile.displayName.split(' ') [1],
                 email: profile.username,
                 age: '1',
                 password: '1',
+                fromGithub: true
             }
             console.log(newUser, 'n2');
             const result = await userModel.create(newUser)
